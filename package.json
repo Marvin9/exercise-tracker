@@ -1,0 +1,23 @@
+{
+  "name": "exercise_tracker",
+  "version": "1.0.0",
+  "description": "fcc api project. that creates user and trackes it's exercise based on entry. usesr can get their data by userid",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "exercise_track",
+    "api",
+    "fcc"
+  ],
+  "author": "mayursiinh",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "nedb": "^1.8.0",
+    "request": "^2.88.0"
+  }
+}

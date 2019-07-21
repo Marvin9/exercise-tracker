@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css">
+    <style>
+        .vanilla {
+            color:#6FFFE9!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="uk-container">
+        <h1 class="uk-heading-small uk-text-left uk-margin-top"><u>Exercise Tracker</u></h1>
+        <div>
+            <div class="uk-flex uk-flex-middle">
+                <div class="uk-flex uk-flex-column">
+                    <div class="uk-card uk-card-secondary uk-card-body uk-margin-right">
+                        <h3 class="uk-title uk-text-bold">Create new user : </h3>
+                        <span class="uk-text-bold vanilla">POST /api/exercise/new-user</span>
+                        <br><br>
+                        <form action="/api/exercise/new-user" method="POST">
+                            <input type="text" class="uk-input" name="new_user" placeholder="username">
+                            <input type="submit" class="uk-button uk-button-default uk-margin-top" value="submit">
+                        </form>
+                    </div>
+                    <div class="uk-card uk-card-secondary uk-card-body uk-margin-right uk-margin-top">
+                        <h3 class="uk-title uk-text-bold">Get user's log : </h3>
+                        <span class="uk-text-bold vanilla">GET /api/exercise/log?{userId}[&from][&to][&limit]</span>
+                    </div>
+                </div>
+
+                <div class="uk-card uk-card-secondary uk-card-body uk-margin-medium-left">
+                    <h3 class="uk-title uk-text-bold">Add exercise : </h3>
+                    <span class="uk-text-bold vanilla">POST /api/exercise/add</span>
+                    <br><br>
+                    <form action="/api/exercise/add" method="POST">
+                        <input type="text" class="uk-input uk-width-medium" name="userid" placeholder="user Id*"><br><br>
+                        <input type="text" class="uk-input uk-width-medium" name="description" placeholder="description*"><br><br>
+                        <input type="text" class="uk-input uk-width-medium" name="duration" placeholder="duration* (in mins.)"><br><br>
+                        <input type="text" class="uk-input uk-width-medium" name="date" placeholder="date (yyyy-mm-dd)"><br><br>
+                        <input type="submit" class="uk-button uk-button-default uk-margin-top" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let arr = ["new_user", "userid", "description", "duration", "date"];
+        arr.map((e) => {
+            document.querySelector('input[name="'+ e +'"]').value = "";
+        });
+    </script>
+</body>
+</html>
