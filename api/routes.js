@@ -11,11 +11,13 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", 
 
 function l(e) {console.log(e)};
 
-db.remove({})
-
 routers.get('/', async(ctx) => {
     ctx.type = 'html';
     ctx.body = fs.createReadStream('./index.html');
+});
+
+routers.get('/api/whoami', async(ctx) => {
+    ctx.body = ctx.request.ip.toString();
 });
 
 routers.get('/api/exercise/log', async(ctx) => {
